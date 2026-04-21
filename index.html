@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soluciones GEF</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Open+Sans&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Open Sans',sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    z-index:1000;
+}
+
+nav h2{font-family:'Montserrat';letter-spacing:2px;}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px;}
+
+.gold{color:#c8a96a;}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    font-family:'Montserrat';
+    letter-spacing:3px;
+}
+
+.hero p{margin:15px 0;font-size:18px;color:#ccc;}
+
+.btn{
+    padding:12px 28px;
+    border:1px solid #c8a96a;
+    color:#c8a96a;
+    text-decoration:none;
+    margin:10px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c8a96a;
+    color:black;
+}
+
+/* SECCIONES */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-family:'Montserrat';
+    margin-bottom:20px;
+}
+
+/* SERVICIOS */
+.services{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:260px;
+    margin:15px;
+    padding:25px;
+    border:1px solid #1a1a1a;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#c8a96a;
+}
+
+/* DARK */
+.dark{background:#111;}
+
+/* FOOTER */
+footer{
+    padding:40px;
+    text-align:center;
+    background:#000;
+    font-size:14px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    color:white;
+}
+
+/* ANIMACIONES */
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>SOLUCIONES <span class="gold">GEF</span></h2>
+    <div>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>SOLUCIONES <span class="gold">GEF</span></h1>
+    <p>Ingeniería en seguridad, redes y electricidad</p>
+    <p>Protegemos lo que más importa con tecnología profesional</p>
+
+    <div>
+        <a href="https://wa.me/528116112044" class="btn">WhatsApp</a>
+        <a href="#" class="btn">Cotización</a>
+    </div>
+</div>
+
+<section class="fade">
+    <h2 class="gold">Servicios</h2>
+
+    <div class="services">
+        <div class="card"><h3>Electricidad</h3></div>
+        <div class="card"><h3>Cámaras</h3></div>
+        <div class="card"><h3>Control de Acceso</h3></div>
+        <div class="card"><h3>Incendio</h3></div>
+        <div class="card"><h3>Redes</h3></div>
+    </div>
+</section>
+
+<section class="dark fade">
+    <h2 class="gold">¿Por qué elegirnos?</h2>
+    <p>Ingeniería especializada, instalación profesional y atención personalizada.</p>
+</section>
+
+<section class="fade">
+    <h2 class="gold">Proyectos</h2>
+    <p>Próximamente imágenes reales de nuestros trabajos.</p>
+</section>
+
+<section class="dark fade">
+    <h2 class="gold">Contacto</h2>
+    <p>Tel: 8116112044</p>
+    <p>Email: alexis.escamilla@solucionesgef.com</p>
+</section>
+
+<footer>
+    Soluciones GEF © 2026
+</footer>
+
+<a href="https://wa.me/528116112044" class="whatsapp">💬</a>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
