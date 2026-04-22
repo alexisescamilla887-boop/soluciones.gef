@@ -12,7 +12,7 @@
 
 body{
     font-family:'Open Sans',sans-serif;
-    background:#0b0b0b;
+    background: radial-gradient(circle at top, #111, #000);
     color:white;
 }
 
@@ -21,16 +21,41 @@ nav{
     position:fixed;
     width:100%;
     top:0;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.7);
     backdrop-filter:blur(10px);
     padding:15px 40px;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     z-index:1000;
 }
 
-nav h2{font-family:'Montserrat';letter-spacing:2px;}
-nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px;}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+/* LOGO */
+.logo{
+    height:55px;
+    filter: drop-shadow(0 0 12px rgba(200,169,106,0.8));
+    transition:0.3s;
+}
+.logo:hover{transform:scale(1.08);}
+
+.logo-hero{
+    width:180px;
+    margin-bottom:20px;
+    filter: drop-shadow(0 0 25px rgba(200,169,106,0.9));
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
 
 .gold{color:#c8a96a;}
 
@@ -42,17 +67,19 @@ nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px;}
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
 }
 
 .hero h1{
     font-size:55px;
     font-family:'Montserrat';
-    letter-spacing:3px;
 }
 
-.hero p{margin:15px 0;font-size:18px;color:#ccc;}
+.hero p{
+    margin:10px 0;
+    color:#ccc;
+}
 
+/* BOTONES */
 .btn{
     padding:12px 28px;
     border:1px solid #c8a96a;
@@ -92,23 +119,37 @@ h2{
     padding:25px;
     border:1px solid #1a1a1a;
     border-radius:15px;
-    transition:.3s;
+    transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
     border-color:#c8a96a;
 }
 
-/* DARK */
-.dark{background:#111;}
+/* FORM */
+input, textarea{
+    width:90%;
+    max-width:400px;
+    margin:10px;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    padding:12px 25px;
+    background:#c8a96a;
+    border:none;
+    color:black;
+    cursor:pointer;
+}
 
 /* FOOTER */
 footer{
     padding:40px;
     text-align:center;
     background:#000;
-    font-size:14px;
 }
 
 /* WHATSAPP */
@@ -119,8 +160,16 @@ footer{
     background:#25D366;
     padding:15px;
     border-radius:50%;
-    text-decoration:none;
+    font-size:22px;
     color:white;
+    text-decoration:none;
+    animation:float 2s infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
 }
 
 /* ANIMACIONES */
@@ -129,81 +178,85 @@ footer{
     transform:translateY(20px);
     transition:1s;
 }
-
 .show{
     opacity:1;
     transform:translateY(0);
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-    <h2>SOLUCIONES <span class="gold">GEF</span></h2>
-    <div>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-    </div>
+<img src="https://i.imgur.com/98MHMI1.jpeg" class="logo">
+
+<div>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
 
 <div class="hero">
-    <h1>SOLUCIONES <span class="gold">GEF</span></h1>
-    <p>Ingeniería en seguridad, redes y electricidad</p>
-    <p>Protegemos lo que más importa con tecnología profesional</p>
+<img src="https://i.imgur.com/98MHMI1.jpeg" class="logo-hero">
 
-    <div>
-        <a href="https://wa.me/528116112044" class="btn">WhatsApp</a>
-        <a href="#" class="btn">Cotización</a>
-    </div>
+<h1>SOLUCIONES <span class="gold">GEF</span></h1>
+<p>Ingeniería en seguridad, redes y electricidad</p>
+<p>Instalación profesional y atención inmediata</p>
+
+<div>
+<a href="https://wa.me/528116112044?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" class="btn">WhatsApp</a>
+<a href="tel:8116112044" class="btn">Llamar</a>
+</div>
 </div>
 
-<section class="fade">
-    <h2 class="gold">Servicios</h2>
+<section id="servicios" class="fade">
+<h2 class="gold">Servicios</h2>
 
-    <div class="services">
-        <div class="card"><h3>Electricidad</h3></div>
-        <div class="card"><h3>Cámaras</h3></div>
-        <div class="card"><h3>Control de Acceso</h3></div>
-        <div class="card"><h3>Incendio</h3></div>
-        <div class="card"><h3>Redes</h3></div>
-    </div>
-</section>
-
-<section class="dark fade">
-    <h2 class="gold">¿Por qué elegirnos?</h2>
-    <p>Ingeniería especializada, instalación profesional y atención personalizada.</p>
+<div class="services">
+<div class="card"><h3>Electricidad</h3></div>
+<div class="card"><h3>Cámaras</h3></div>
+<div class="card"><h3>Control de Acceso</h3></div>
+<div class="card"><h3>Incendio</h3></div>
+<div class="card"><h3>Redes</h3></div>
+</div>
 </section>
 
 <section class="fade">
-    <h2 class="gold">Proyectos</h2>
-    <p>Próximamente imágenes reales de nuestros trabajos.</p>
+<h2 class="gold">¿Por qué elegirnos?</h2>
+<p>Soluciones para empresas y hogares con tecnología profesional.</p>
 </section>
 
-<section class="dark fade">
-    <h2 class="gold">Contacto</h2>
-    <p>Tel: 8116112044</p>
-    <p>Email: alexis.escamilla@solucionesgef.com</p>
+<section id="contacto" class="fade">
+<h2 class="gold">Contáctanos</h2>
+
+<p>Tel: 8116112044</p>
+<p>Email: alexis.escamilla@solucionesgef.com</p>
+
+<form action="mailto:alexis.escamilla@solucionesgef.com" method="post" enctype="text/plain">
+<input type="text" name="nombre" placeholder="Tu nombre" required><br>
+<input type="email" name="email" placeholder="Tu correo" required><br>
+<textarea name="mensaje" placeholder="Escribe tu mensaje"></textarea><br>
+<button type="submit">Enviar</button>
+</form>
 </section>
 
 <footer>
-    Soluciones GEF © 2026
+Soluciones GEF © 2026
 </footer>
 
-<a href="https://wa.me/528116112044" class="whatsapp">💬</a>
+<a href="https://wa.me/528116112044?text=Hola,%20quiero%20cotizar%20un%20servicio" class="whatsapp">💬</a>
 
 <script>
 const elements = document.querySelectorAll('.fade');
 
 window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 50){
-            el.classList.add('show');
-        }
-    });
+elements.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+el.classList.add('show');
+}
+});
 });
 </script>
 
